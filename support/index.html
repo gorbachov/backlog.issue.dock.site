@@ -38,7 +38,7 @@
             <p class="policy-lead">
               使い方、不具合、データの取り扱い、契約に関する案内と、安全な問い合わせ方法をまとめています。
             </p>
-            <p class="policy-date">施行日: <span class="pending">[要決定]</span><br />最終更新日: 2026年9月2日</p>
+            <p class="policy-date">施行日: <span class="pending">[要決定：有料版提供開始日]</span><br />最終更新日: 2026年9月2日</p>
           </div>
           <aside class="privacy-summary" aria-label="問い合わせ時の重要事項">
             <p class="summary-label">CONTACT SAFELY</p>
@@ -72,7 +72,7 @@
 
         <article class="policy-card">
           <div class="policy-intro">
-            IssueDockは現在、無料ベータ公開に向けて準備中です。提供開始前または内容が未確定の案内は <span class="pending">[要決定]</span> と表示しています。
+            IssueDockは現在、Chrome Web StoreでTrusted Tester向けに提供しており、一般向けの有料版提供開始日は未定です。残る未確定事項は、項目名を明示した要決定表示としています。
             <nav class="related-links" aria-label="法務・サポートページ">
               <a href="../privacy/">プライバシーポリシー</a>
               <a href="../terms/">利用規約</a>
@@ -88,13 +88,14 @@
 
           <section id="contact">
             <h2>2. 問い合わせ先・対応時間</h2>
-            <p>メール: <a href="mailto:support@issue-dock.com">support@issue-dock.com</a></p>
+            <p>メール: <a href="mailto:support@issue-dock.com">support@issue-dock.com</a>（24時間受付）</p>
             <ul>
-              <li>対応時間: <span class="pending">[要決定]</span></li>
-              <li>返信目安: <span class="pending">[要決定]</span></li>
-              <li>電話サポートの実施有無: <span class="pending">[要決定]</span></li>
+              <li>通常対応: 日本時間の平日10:00～17:00</li>
+              <li>休業日: 土曜日、日曜日、日本の祝日、年末年始</li>
+              <li>初回返信目安: 原則3営業日以内</li>
+              <li>電話サポート: 実施していません</li>
             </ul>
-            <p class="policy-warning">現在の個人電話番号は掲載していません。緊急時を含め、現時点ではメールでご連絡ください。</p>
+            <p>内容や調査状況により回答に時間がかかる場合があります。臨時休業がある場合は公式サイト等で案内します。製品サポートはメールで受け付けています。特定商取引法に基づく表記の電話番号は、法令上・事業者連絡先として掲載しているもので、電話サポート窓口ではありません。</p>
           </section>
 
           <section id="contact-details">
@@ -117,14 +118,14 @@
             <h3>Backlog側の課題を書き換えますか？</h3>
             <p>個人ステータス、今日、ピン、タグなどの整理情報はIssueDock内に保存し、Backlog側の課題を変更しません。</p>
             <h3>別のPCでも整理状態を使えますか？</h3>
-            <p>同じGoogleアカウントでChrome同期を利用している場合、個人整理データと暗号化した接続情報を同期できます。課題キャッシュと復号済みAPIキーはPC間で同期しません。</p>
+            <p>同じGoogleアカウントでChrome同期を利用している場合、個人整理データと暗号化した接続情報を同期できます。課題キャッシュと復号済みAPIキーはPC間で同期しません。有料契約は、同じ購入者がExtensionPayで購入時のメールアドレスを確認することで別のPCでも利用できます。</p>
             <h3>株式会社ヌーラボの公式サービスですか？</h3>
             <p>いいえ。IssueDockは株式会社ヌーラボの公式製品ではなく、同社との提携、承認または推奨を示すものではありません。</p>
           </section>
 
           <section id="installation">
             <h2>5. インストール方法</h2>
-            <p>IssueDockはChrome Web Storeでの無料ベータ公開に向けて準備中です。公開URL、インストール手順および提供開始時期は <span class="pending">[要決定]</span> です。公開後は正規のChrome Web Store掲載ページからインストールし、配布元を確認してください。</p>
+            <p>IssueDockのChrome Web Store Item IDは <code>ciglfijkdakeeaahlbnhpbaalljbnepd</code> で、<a href="https://chromewebstore.google.com/detail/ciglfijkdakeeaahlbnhpbaalljbnepd">Chrome Web Store掲載ページ</a>は現在Trusted Tester向けです。一般向け提供開始日は <span class="pending">[要決定：有料版提供開始日]</span> です。利用可能になった掲載ページをChromeで開き、「Chromeに追加」を選び、表示される権限を確認してインストールしてください。配布元とItem IDが一致することを確認してください。</p>
           </section>
 
           <section id="connection">
@@ -154,7 +155,7 @@
               <li><strong><code>storage</code>:</strong> 暗号化した接続情報、個人整理データ、設定の保存に使用します。</li>
               <li><strong>Backlogのhost permission:</strong> 利用者が入力したスペースのoriginについて、接続時に個別に要求し、Backlog APIへ通信するために使用します。</li>
             </ul>
-            <p>IssueDockは全Webサイトへの恒久的なアクセスを要求せず、content scriptを使用して閲覧中ページへコードやDOMを注入しません。</p>
+            <p>IssueDockは全Webサイトへの恒久的なアクセスを要求しません。ExtensionPay上のIssueDock専用画面（<code>https://extensionpay.com/extension/issue-dock/*</code>）に限ってcontent scriptを実行し、英語の案内文、見出し、ボタンおよびプレースホルダーを日本語表示へ置換します。フォーム値、決済処理、メールアドレスまたは契約情報を読み取ったり送信したりせず、その他の閲覧中ページへコードやDOMを注入しません。</p>
           </section>
 
           <section id="storage">
@@ -168,6 +169,9 @@
                   <tr><td>APIキー</td><td>暗号化したcredential envelope</td><td>利用者がChrome同期を選択した場合、暗号文のみ</td></tr>
                   <tr><td>復号済みAPIキー</td><td><code>chrome.storage.local</code>または<code>chrome.storage.session</code></td><td>しない</td></tr>
                   <tr><td>同期用パスフレーズ</td><td>保存しない</td><td>しない</td></tr>
+                  <tr><td>ExtensionPayの利用者識別情報・契約状態</td><td>ExtensionPayおよび<code>chrome.storage.sync</code></td><td>Chrome同期が有効な場合</td></tr>
+                  <tr><td>IssueDockのオフライン利用権キャッシュ</td><td><code>chrome.storage.local</code></td><td>しない</td></tr>
+                  <tr><td>カード・決済情報</td><td>Stripe</td><td>IssueDockには保存しない</td></tr>
                 </tbody>
               </table>
             </div>
@@ -193,17 +197,19 @@
 
           <section id="subscription">
             <h2>12. 契約状況の確認方法</h2>
-            <p>有料プランの提供開始時期、契約状況を確認する画面、および決済画面上でのExtensionPayとStripeの役割は <span class="pending">[要決定]</span> です。確定後、画面までの手順を本ページに掲載します。</p>
+            <p>IssueDock内の「プランと利用状況」で、無料トライアル、月額・年額の契約状態、支払失敗、解約予定日または契約終了を確認できます。購入後、別PCでのログイン後または支払方法の更新後は、IssueDockへ戻るか「契約状態を再確認」を選んでください。起動中は30分ごとにも再確認します。購入・ログイン・契約管理の画面はExtensionPayが提供し、決済とカード情報はStripeが取り扱います。</p>
           </section>
 
           <section id="cancellation">
             <h2>13. 解約方法</h2>
-            <p>解約手順、申請期限、解約が反映される時期、および解約後に利用できる期間は <span class="pending">[要決定]</span> です。確定後、有料プランの購入前と本ページの両方で案内します。</p>
+            <p>「プランと利用状況」で「契約・支払い方法を管理」を選び、ExtensionPay・Stripeの契約管理画面で解約手続きを行います。IssueDockへ戻り「契約状態を再確認」を選んでください。解約予定日時を取得できた場合は、その日時まで利用できる旨をIssueDockに表示し、その後アクセスを停止します。次回更新の停止と最終利用日は契約管理画面およびIssueDockの表示で確認してください。現行画面での期間末解約設定は <span class="pending">[要決定：解約画面での期間末解約設定の実画面確認]</span> です。</p>
+            <p>解約、トライアル終了または支払失敗によって、保存済みのBacklog接続、暗号化したAPIキー、課題キャッシュおよび個人整理データは削除しません。再契約後は保存済みデータを維持したまま利用を再開できます。</p>
           </section>
 
           <section id="refunds">
             <h2>14. 返金に関する案内</h2>
-            <p>返金対象となる条件、申請期限、申請方法、返金方法および処理期間は <span class="pending">[要決定]</span> です。確定後、購入前に<a href="../terms/#refunds">利用規約</a>と<a href="../commerce-disclosure/">特定商取引法に基づく表記</a>へ反映します。</p>
+            <p>デジタルサービスの性質上、購入者都合によるキャンセル・返金は原則として受け付けず、支払済み期間の未利用分の日割り返金も行いません。二重請求、誤課金、法令上返金が必要な場合は返金対象です。IssueDock側の重大な不具合により主要機能を利用できず、合理的な期間内に解消できない場合は個別に対応します。</p>
+            <p>返金申請は<a href="mailto:support@issue-dock.com">support@issue-dock.com</a>へ、決済日、金額、決済に使用したメールアドレスおよび申請理由を記載して送ってください。カード番号、パスワードまたはBacklog APIキーは送信しないでください。確認後に返金可否を回答し、承認した場合は速やかに処理します。実際の着金日はStripeおよびカード会社の処理期間によります。条件の全文は<a href="../terms/#refunds">利用規約</a>と<a href="../commerce-disclosure/">特定商取引法に基づく表記</a>をご確認ください。</p>
           </section>
 
           <section id="security-report">
