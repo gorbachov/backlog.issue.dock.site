@@ -86,9 +86,9 @@
               <div class="disclosure-row"><dt>サービス提供時期</dt><dd>有料版提供開始日: <span class="pending">[要決定：有料版提供開始日]</span><br />購入後、ExtensionPayで有効な契約状態を確認でき次第、IssueDockへ反映します。画面へ戻るか「契約状態を再確認」を選ぶことで再確認できます。</dd></div>
               <div class="disclosure-row"><dt>サブスクリプションの更新条件</dt><dd>購入後は、月額プランは1か月ごとに250円（税込）、年額プランは1年ごとに2,400円（税込）で自動更新します。料金変更は原則30日前までに通知し、通知後の次回更新以降に適用します。</dd></div>
               <div class="disclosure-row"><dt>解約方法</dt><dd>IssueDock内の「プランと利用状況」から「契約・支払い方法を管理」を選び、ExtensionPay・Stripeの契約管理画面で手続きします。IssueDockへ戻り「契約状態を再確認」を選んで、表示を更新してください。詳しくは<a href="../support/#cancellation">サポートページ</a>をご覧ください。</dd></div>
-              <div class="disclosure-row"><dt>解約の反映時期</dt><dd>解約予定日時を取得できた場合は、その日時まで利用できる旨をIssueDockに表示し、その後アクセスを停止します。次回更新の停止と最終利用日は契約管理画面およびIssueDockの表示で確認してください。現行画面での期間末解約設定は <span class="pending">[要決定：解約画面での期間末解約設定の実画面確認]</span> です。解約しても保存済みのBacklog接続、課題キャッシュおよび個人整理データは削除しません。</dd></div>
+              <div class="disclosure-row"><dt>解約の反映時期</dt><dd>解約手続き後も、支払済みの契約期間末日まで有料機能を利用できます。IssueDockには契約終了予定日を表示し、その日を過ぎると有料機能へのアクセスを停止します。解約により次回以降の自動更新が停止され、契約期間の途中で利用を終了した場合も日割り返金は行いません。解約しても保存済みのBacklog接続、課題キャッシュおよび個人整理データは削除しません。</dd></div>
               <div class="disclosure-row"><dt>返品・キャンセル・返金条件</dt><dd>デジタルサービスの性質上、購入者都合によるキャンセル・返金は原則として受け付けず、支払済み期間の未利用分の日割り返金も行いません。二重請求、誤課金、法令上返金が必要な場合は返金対象です。IssueDock側の重大な不具合により主要機能を利用できず、合理的な期間内に解消できない場合は個別に対応します。返金申請は<a href="mailto:support@issue-dock.com">support@issue-dock.com</a>へ、決済日、金額、決済に使用したメールアドレスおよび申請理由を記載して送ってください。カード番号、パスワードまたはBacklog APIキーは送信しないでください。確認後に返金可否を回答し、承認した場合は速やかに処理します。実際の着金日はStripeおよびカード会社の処理期間によります。詳しくは<a href="../support/#refunds">サポートページ</a>をご覧ください。</dd></div>
-              <div class="disclosure-row"><dt>動作環境</dt><dd>対応OS: <span class="pending">[要決定：対応OS]</span><br />対応ブラウザ: Google Chrome<br />最低Chromeバージョン: <span class="pending">[要決定：最低Chromeバージョン]</span><br />利用者が正当に利用できるBacklogアカウント、スペースURLおよびAPIキーが必要です。</dd></div>
+              <div class="disclosure-row"><dt>動作環境</dt><dd>Googleがサポートしているデスクトップ版Google Chromeを利用できるWindows、macOS、LinuxおよびChromeOSに対応します。Android・iOSなどのモバイル環境には対応しません。Google Chrome 102以上（最新版推奨）が必要です。Google Chrome以外のChromium系ブラウザは動作保証の対象外です。利用者が正当に利用できるBacklogアカウント、スペースURLおよびAPIキーが必要です。</dd></div>
               <div class="disclosure-row"><dt>問い合わせ受付時間</dt><dd>メール受付は24時間です。通常対応は日本時間の平日10:00～17:00（土曜日、日曜日、日本の祝日、年末年始を除く）、初回返信は原則3営業日以内です。内容や調査状況により回答に時間がかかる場合があります。</dd></div>
               <div class="disclosure-row"><dt>その他の販売条件</dt><dd>未成年者は法定代理人の同意を得て利用してください。IssueDockは主として日本語利用者向けです。日本国外から利用する場合、利用者自身が現地法令への適合を確認してください。日本国外での利用可能性、表示、サポートまたは決済を保証しません。同一の購入者は購入時のメールアドレスを確認して複数端末で利用できますが、無関係な利用者との契約共有、利用権の譲渡・貸与・再販売、IssueDock自体の第三者向け再提供は禁止します。現行実装では複数のBacklogスペースを登録でき、プラン別の登録件数または機能制限はありません。</dd></div>
             </dl>
@@ -96,16 +96,18 @@
 
           <section id="environment">
             <h2>動作環境について</h2>
-            <p>IssueDockはGoogle Chrome向けの拡張機能です。現在のManifestには最低Chromeバージョンの指定がないため、販売開始前に対応OSと最低Chromeバージョンを検証して確定します。Backlogとの接続には、利用者自身のスペースURLとAPIキー、および接続先スペースのoriginに対するChrome権限が必要です。</p>
+            <p>IssueDockはGoogle Chrome向けの拡張機能です。Googleがサポートしているデスクトップ版Google Chromeを利用できるWindows、macOS、LinuxおよびChromeOSに対応し、Android・iOSなどのモバイル環境には対応しません。Google Chrome 102以上（最新版推奨）が必要で、Google Chrome以外のChromium系ブラウザは動作保証の対象外です。Backlogとの接続には、利用者自身のスペースURLとAPIキー、および接続先スペースのoriginに対するChrome権限が必要です。</p>
           </section>
 
           <section id="notes">
             <h2>公開前の確認事項</h2>
             <p class="policy-warning">有料販売の受付を開始する前に、残る具体名付きの要決定事項をすべて確定し、購入の最終確認画面と内容が一致していることを確認します。</p>
             <ul>
-              <li>有料版提供開始日および各ページの施行日</li>
-              <li>対応OSと最低Chromeバージョン</li>
-              <li>ExtensionPay・Stripeの現行契約管理画面における期間末解約設定</li>
+              <li>有料版提供開始日および各ページの施行日を確定する</li>
+              <li>ExtensionPayの開発環境またはStripeのテスト環境で、「契約・支払い方法を管理」から解約操作へ進めることを確認する</li>
+              <li>解約後も契約期間末日まで利用可能と表示され、次回の自動更新が停止されることを確認する</li>
+              <li>IssueDock上に契約終了予定日が表示されることを確認する</li>
+              <li>実契約または本番課金を使用して解約テストを行わない</li>
             </ul>
             <p>表示内容の確定時には、<a href="https://www.no-trouble.caa.go.jp/qa/advertising.html">消費者庁「通信販売広告Q&amp;A」</a>および<a href="https://support.stripe.com/questions/how-to-create-and-display-a-commerce-disclosure-page?locale=ja-JP">Stripeの案内</a>も確認します。</p>
           </section>
