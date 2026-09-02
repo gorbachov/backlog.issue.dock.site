@@ -39,7 +39,7 @@
               IssueDockは、利用者のBacklogデータを運営者のサーバーへ送信しない、
               ローカルファーストのChrome拡張です。
             </p>
-            <p class="policy-date">施行日: 2026年7月29日<br />最終更新日: 2026年8月12日</p>
+            <p class="policy-date">施行日: 2026年7月29日<br />最終更新日: 2026年9月2日</p>
           </div>
           <aside class="privacy-summary" aria-label="プライバシー概要">
             <p class="summary-label">AT A GLANCE</p>
@@ -67,7 +67,7 @@
 
         <article class="policy-card">
           <p class="policy-intro">
-            IssueDockは、利用者が登録したBacklogスペースの課題を一画面へ集約し、端末内とChrome同期で個人的に整理するためのChrome拡張です。本ポリシーは無料ベータ版と、同じChrome Web Store拡張IDで提供する後続版に適用します。
+            IssueDockは、利用者が登録したBacklogスペースの課題を一画面へ集約し、端末内とChrome同期で個人的に整理するためのChrome拡張です。本ポリシーは無料ベータ版と、同じChrome Web Store拡張IDで提供するサブスクリプション版に適用します。
           </p>
 
           <section id="information">
@@ -77,12 +77,14 @@
               <li>利用者が入力したBacklogスペースURLとAPIキー</li>
               <li>Backlog APIから取得した接続ユーザー、参加プロジェクト、課題、課題本文、コメント、添付情報、同期状態</li>
               <li>IssueDock内で設定した個人ステータス、今日、待ちの再確認日、並び順、ピン、タグ、設定</li>
+              <li>無料トライアルまたは契約のために利用者がExtensionPayへ入力するメールアドレス</li>
+              <li>ExtensionPayから取得するトライアル開始日時、契約状態、契約プラン、解約予定日時</li>
             </ul>
           </section>
 
           <section id="purpose">
             <h2>2. 利用目的</h2>
-            <p>これらの情報は、登録したBacklogスペースの課題を取得・表示し、複数スペースを横断して検索・整理し、利用者の端末間で個人整理データを同期するためにだけ使用します。</p>
+            <p>これらの情報は、登録したBacklogスペースの課題を取得・表示し、複数スペースを横断して検索・整理し、利用者の端末間で個人整理データを同期し、無料トライアルと有料契約の利用権を確認するためにだけ使用します。</p>
           </section>
 
           <section id="storage">
@@ -96,17 +98,22 @@
                   <tr><td>APIキー</td><td>PBKDF2-SHA-256 + AES-256-GCMで暗号化したcredential envelope</td><td>利用者がChrome同期を選択した場合、暗号文のみ</td></tr>
                   <tr><td>復号済みAPIキー</td><td><code>chrome.storage.local</code>または<code>chrome.storage.session</code></td><td>しない</td></tr>
                   <tr><td>同期用パスフレーズ</td><td>保存しない</td><td>しない</td></tr>
+                  <tr><td>ExtensionPayの利用者識別情報・契約状態</td><td>ExtensionPayおよび<code>chrome.storage.sync</code></td><td>Chrome同期が有効な場合</td></tr>
+                  <tr><td>IssueDockのオフライン利用権キャッシュ</td><td><code>chrome.storage.local</code></td><td>しない</td></tr>
+                  <tr><td>カード・決済情報</td><td>Stripe</td><td>IssueDockには保存しない</td></tr>
                 </tbody>
               </table>
             </div>
-            <p>Chrome Storageは拡張の信頼されたコンテキストだけから参照できるよう制限します。IssueDockはcontent scriptを使用せず、閲覧中のWebページへコードやDOMを注入しません。</p>
+            <p>Chrome Storageは拡張の信頼されたコンテキストだけから参照できるよう制限します。IssueDockはExtensionPay上のIssueDock専用画面に限ってcontent scriptを実行し、英語の案内文、見出し、ボタン、プレースホルダーを日本語表示へ置換します。フォーム値、決済処理、メールアドレス、契約情報を読み取ったり送信したりしません。その他の閲覧中のWebページへコードやDOMを注入しません。</p>
           </section>
 
           <section id="communication">
             <h2>4. 外部通信と共有</h2>
             <ul>
               <li>IssueDockは、利用者が登録しChrome権限を許可したBacklog APIへHTTPSで通信します。</li>
-              <li>課題、APIキー、個人整理データをIssueDock運営者のサーバーへ送信しません。</li>
+              <li>無料トライアル、契約、別PCでのログイン、契約管理のためExtensionPayへ通信します。ExtensionPayは利用者のメールアドレスと利用権情報を取り扱います。</li>
+              <li>支払いはStripeの画面で行われます。カード・決済情報はStripeが取り扱い、IssueDockから参照しません。</li>
+              <li>課題、APIキー、個人整理データをIssueDock運営者のサーバー、ExtensionPay、Stripeへ送信しません。</li>
               <li>匿名利用状況計測、広告SDK、外部エラー監視を使用しません。</li>
               <li>情報を販売、広告利用、または第三者提供しません。</li>
               <li>法令に基づく場合を除き、人が利用者のBacklogデータを閲覧することはありません。</li>
@@ -117,8 +124,9 @@
           <section id="permissions">
             <h2>5. Chrome権限</h2>
             <ul>
-              <li><strong><code>storage</code>:</strong> 暗号化した接続情報、個人整理データ、設定の保存に使用します。</li>
+              <li><strong><code>storage</code>:</strong> 暗号化した接続情報、個人整理データ、設定、ExtensionPayの利用者識別情報・契約状態およびIssueDockのオフライン利用権キャッシュの保存に使用します。</li>
               <li><strong>Backlogのhost permission:</strong> 利用者が接続時に入力したスペースのoriginについて、実行時に個別に要求します。全Webサイトへの恒久的なアクセスは要求しません。</li>
+              <li><strong>ExtensionPayのIssueDock専用画面:</strong> <code>https://extensionpay.com/extension/issue-dock/*</code> で英語の操作案内を日本語表示へ置換するcontent scriptのためにだけ使用します。フォームや決済処理、利用者データにはアクセスしません。</li>
             </ul>
           </section>
 
@@ -133,12 +141,14 @@
               <li><strong>接続解除:</strong> 対象スペースの接続情報、復号済みAPIキー、端末キャッシュ、サイト権限を削除します。個人タグ等は再接続に備えて保持します。</li>
               <li><strong>同期リセット:</strong> 対象接続の暗号文をChrome同期から削除し、この端末だけの暗号化保存へ切り替えます。</li>
               <li><strong>アンインストール:</strong> Chromeが拡張に属する端末データと同期データを削除します。必要な個人整理データは事前にJSONバックアップしてください。</li>
+              <li><strong>契約の解約:</strong> IssueDock内の「プランと利用状況」からExtensionPay・Stripeの契約管理画面を開きます。解約してもBacklog接続、課題キャッシュ、個人整理データは削除しません。</li>
             </ul>
           </section>
 
           <section id="security-policy">
             <h2>8. セキュリティ</h2>
             <p>APIキーはPBKDF2-SHA-256で導出した鍵とAES-256-GCMで暗号化します。APIキーの平文とパスフレーズを同期データ、JSONバックアップ、ログへ含めません。Backlog API通信では<code>credentials: omit</code>と<code>cache: no-store</code>を指定します。</p>
+            <p>ExtensionPayの通信に失敗した場合、確認済みトライアルは本来の終了日時まで、確認済み有料契約は最後の成功確認から最大72時間だけ利用できます。オフライン利用権キャッシュにメールアドレスとカード情報は保存しません。</p>
           </section>
 
           <section id="changes">
@@ -155,9 +165,24 @@
     </main>
 
     <footer class="site-footer policy-footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="brand footer-brand" href="../">
+            <img src="../assets/issuedock-icon.svg" width="34" height="34" alt="" />
+            <span>IssueDock</span>
+          </a>
+          <p>複数のBacklogスペースに散らばる課題を、ひとつの画面へ。</p>
+        </div>
+        <nav aria-label="フッターナビゲーション">
+          <a aria-current="page" href="./">プライバシーポリシー</a>
+          <a href="../terms/">利用規約</a>
+          <a href="../commerce-disclosure/">特定商取引法に基づく表記</a>
+          <a href="../support/">サポート</a>
+        </nav>
+      </div>
       <div class="shell legal">
-        <p>IssueDockはNulab社の公式製品ではありません。Backlogは株式会社ヌーラボの商標または登録商標です。</p>
-        <p><a href="../">IssueDock ホームへ戻る</a></p>
+        <p>IssueDockは株式会社ヌーラボの公式製品ではありません。Backlogは株式会社ヌーラボの商標または登録商標です。</p>
+        <p>© 2026 IssueDock</p>
       </div>
     </footer>
   </body>
