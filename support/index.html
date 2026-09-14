@@ -38,7 +38,7 @@
             <p class="policy-lead">
               使い方、不具合、データの取り扱い、契約に関する案内と、安全な問い合わせ方法をまとめています。
             </p>
-            <p class="policy-date">有料版提供開始日: <span class="pending">未定</span><br />最終更新日: 2026年9月2日</p>
+            <p class="policy-date">有料版提供開始日: <span class="pending">未定</span><br />最終更新日: 2026年9月14日</p>
           </div>
           <aside class="privacy-summary" aria-label="問い合わせ時の重要事項">
             <p class="summary-label">CONTACT SAFELY</p>
@@ -118,7 +118,7 @@
             <h3>Backlog側の課題を書き換えますか？</h3>
             <p>個人ステータス、今日、ピン、タグなどの整理情報はIssueDock内に保存し、Backlog側の課題を変更しません。</p>
             <h3>別のPCでも整理状態を使えますか？</h3>
-            <p>同じGoogleアカウントでChrome同期を利用している場合、個人整理データと暗号化した接続情報を同期できます。課題キャッシュと復号済みAPIキーはPC間で同期しません。有料契約は、同じ購入者がExtensionPayで購入時のメールアドレスを確認することで別のPCでも利用できます。</p>
+            <p>同じGoogleアカウントでChrome同期を利用している場合、個人整理データと暗号化した接続情報を同期できます。課題キャッシュと復号済みAPIキーはPC間で同期しません。有料契約は、同じ利用者がIssueDockでメールアドレスを確認することで別のPCでも利用できます。</p>
             <h3>株式会社ヌーラボの公式サービスですか？</h3>
             <p>いいえ。IssueDockは株式会社ヌーラボの公式製品ではなく、同社との提携、承認または推奨を示すものではありません。</p>
           </section>
@@ -155,7 +155,7 @@
               <li><strong><code>storage</code>:</strong> 暗号化した接続情報、個人整理データ、設定の保存に使用します。</li>
               <li><strong>Backlogのhost permission:</strong> 利用者が入力したスペースのoriginについて、接続時に個別に要求し、Backlog APIへ通信するために使用します。</li>
             </ul>
-            <p>IssueDockは全Webサイトへの恒久的なアクセスを要求しません。ExtensionPay上のIssueDock専用画面（<code>https://extensionpay.com/extension/issue-dock/*</code>）に限ってcontent scriptを実行し、英語の案内文、見出し、ボタンおよびプレースホルダーを日本語表示へ置換します。フォーム値、決済処理、メールアドレスまたは契約情報を読み取ったり送信したりせず、その他の閲覧中ページへコードやDOMを注入しません。</p>
+            <p>IssueDockは全Webサイトへの恒久的なアクセスを要求せず、その他の閲覧中ページへコードやDOMを注入しません。</p>
           </section>
 
           <section id="storage">
@@ -169,7 +169,8 @@
                   <tr><td>APIキー</td><td>暗号化したcredential envelope</td><td>利用者がChrome同期を選択した場合、暗号文のみ</td></tr>
                   <tr><td>復号済みAPIキー</td><td><code>chrome.storage.local</code>または<code>chrome.storage.session</code></td><td>しない</td></tr>
                   <tr><td>同期用パスフレーズ</td><td>保存しない</td><td>しない</td></tr>
-                  <tr><td>ExtensionPayの利用者識別情報・契約状態</td><td>ExtensionPayおよび<code>chrome.storage.sync</code></td><td>Chrome同期が有効な場合</td></tr>
+                  <tr><td>メールアドレス、本人確認・端末・認証セッション・利用権情報</td><td>IssueDockのCloudflare D1</td><td>IssueDockアカウントを通じて利用</td></tr>
+                  <tr><td>Stripeの顧客・契約識別子、契約状態</td><td>IssueDockのCloudflare D1およびStripe</td><td>IssueDockアカウントを通じて利用</td></tr>
                   <tr><td>IssueDockのオフライン利用権キャッシュ</td><td><code>chrome.storage.local</code></td><td>しない</td></tr>
                   <tr><td>カード・決済情報</td><td>Stripe</td><td>IssueDockには保存しない</td></tr>
                 </tbody>
@@ -197,12 +198,12 @@
 
           <section id="subscription">
             <h2>12. 契約状況の確認方法</h2>
-            <p>IssueDock内の「プランと利用状況」で、無料トライアル、月額・年額の契約状態、支払失敗、解約予定日または契約終了を確認できます。購入後、別PCでのログイン後または支払方法の更新後は、IssueDockへ戻るか「契約状態を再確認」を選んでください。起動中は30分ごとにも再確認します。購入・ログイン・契約管理の画面はExtensionPayが提供し、決済とカード情報はStripeが取り扱います。</p>
+            <p>IssueDock内の「プランと利用状況」で、無料トライアル、月額・年額の契約状態、支払失敗、解約予定日または契約終了を確認できます。購入後、別PCでのログイン後または支払方法の更新後は、IssueDockへ戻るか「契約状態を再確認」を選んでください。起動中は30分ごとにも再確認します。ログインと利用権管理はIssueDock APIが提供し、購入・契約管理画面とカード決済はStripeが提供・処理します。IssueDockはカード情報を参照・保存しません。</p>
           </section>
 
           <section id="cancellation">
             <h2>13. 解約方法</h2>
-            <p>「プランと利用状況」で「契約・支払い方法を管理」を選び、ExtensionPay・Stripeの契約管理画面で解約手続きを行います。IssueDockへ戻り「契約状態を再確認」を選んでください。解約手続き後も、支払済みの契約期間末日まで有料機能を利用できます。解約により次回以降の自動更新が停止され、契約期間の途中で利用を終了した場合も日割り返金は行いません。IssueDockには契約終了予定日を表示し、その日を過ぎると有料機能へのアクセスを停止します。</p>
+            <p>「プランと利用状況」で「契約・支払い方法を管理」を選び、Stripeの契約管理画面で解約手続きを行います。IssueDockへ戻り「契約状態を再確認」を選んでください。解約手続き後も、支払済みの契約期間末日まで有料機能を利用できます。解約により次回以降の自動更新が停止され、契約期間の途中で利用を終了した場合も日割り返金は行いません。IssueDockには契約終了予定日を表示し、その日を過ぎると有料機能へのアクセスを停止します。</p>
             <p>解約、トライアル終了または支払失敗によって、保存済みのBacklog接続、暗号化したAPIキー、課題キャッシュおよび個人整理データは削除しません。再契約後は保存済みデータを維持したまま利用を再開できます。</p>
           </section>
 
