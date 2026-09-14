@@ -1,10 +1,11 @@
 import { spawn, spawnSync } from 'node:child_process';
 import { createServer } from 'node:http';
 import { existsSync, mkdtempSync, readFileSync, rmSync, statSync } from 'node:fs';
-import { extname, join, normalize } from 'node:path';
+import { dirname, extname, join, normalize } from 'node:path';
 import { tmpdir } from 'node:os';
+import { fileURLToPath } from 'node:url';
 
-const root = normalize(join(import.meta.dirname, '..'));
+const root = normalize(join(dirname(fileURLToPath(import.meta.url)), '..'));
 const pages = ['/', '/support/', '/privacy/', '/terms/', '/commerce-disclosure/'];
 const widths = [500, 1280];
 const errors = [];
@@ -165,4 +166,3 @@ if (errors.length) {
 } else {
   console.log(`OK ${pages.length}ページを500px・1280pxで確認しました`);
 }
-
