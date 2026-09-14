@@ -25,6 +25,10 @@
           <a href="../#features">機能</a>
           <a href="../#security">データと安全性</a>
           <a aria-current="page" href="./">プライバシー</a>
+          <a
+            class="nav-cta"
+            href="https://chromewebstore.google.com/detail/issuedock/ciglfijkdakeeaahlbnhpbaalljbnepd"
+          >インストール</a>
         </nav>
       </div>
     </header>
@@ -67,7 +71,7 @@
 
         <article class="policy-card">
           <p class="policy-intro">
-            IssueDockは、利用者が登録したBacklogスペースの課題を一画面へ集約し、端末内とChrome同期で個人的に整理するためのChrome拡張です。本ポリシーは無料ベータ版と、同じChrome Web Store拡張IDで提供するサブスクリプション版に適用します。
+            IssueDockは、利用者が登録したBacklogスペースの課題を一画面へ集約し、端末内とChrome同期で個人的に整理するためのChrome拡張です。本ポリシーは、14日間の無料トライアルと有料サブスクリプションを含む、Chrome Web Storeで提供するIssueDockに適用します。
           </p>
 
           <section id="information">
@@ -78,8 +82,9 @@
               <li>Backlog APIから取得した接続ユーザー、参加プロジェクト、課題、課題本文、コメント、添付情報、同期状態</li>
               <li>IssueDock内で設定した個人ステータス、今日、待ちの再確認日、並び順、ピン、タグ、設定</li>
               <li>アカウント作成・ログイン・トライアル・契約管理のために利用者が入力するメールアドレス</li>
-              <li>本人確認日時、端末名・最終利用日時、認証セッション、トライアル・契約状態</li>
-              <li>Stripeの顧客・契約・料金識別子、決済状態、返金および管理操作の記録</li>
+              <li>本人確認日時、端末名・最終利用日時、認証用トークンのダイジェスト、認証セッション、トライアル・無料利用権・契約状態</li>
+              <li>Stripeの顧客・契約・料金識別子、決済状態、支払い失敗日時と72時間の猶予期限、解約状態、返金および管理操作の記録</li>
+              <li>不正利用防止のためのメールアドレスと接続元IPアドレスのハッシュ値、試行回数、有効期限</li>
               <li>APIのrequest ID、route、応答状態、処理時間、エラーコード等の運用ログ</li>
             </ul>
           </section>
@@ -100,10 +105,11 @@
                   <tr><td>APIキー</td><td>PBKDF2-SHA-256 + AES-256-GCMで暗号化したcredential envelope</td><td>利用者がChrome同期を選択した場合、暗号文のみ</td></tr>
                   <tr><td>復号済みAPIキー</td><td><code>chrome.storage.local</code>または<code>chrome.storage.session</code></td><td>しない</td></tr>
                   <tr><td>同期用パスフレーズ</td><td>保存しない</td><td>しない</td></tr>
-                  <tr><td>メールアドレス、本人確認・端末・認証セッション・利用権情報</td><td>IssueDockのCloudflare D1</td><td>IssueDockアカウントを通じて利用</td></tr>
-                  <tr><td>Stripeの顧客・契約識別子、契約状態、返金・監査記録</td><td>IssueDockのCloudflare D1およびStripe</td><td>IssueDockアカウントを通じて利用</td></tr>
+                  <tr><td>メールアドレス、本人確認・端末・認証セッション、トライアル・無料利用権情報</td><td>IssueDockのCloudflare D1</td><td>IssueDockアカウントを通じて利用</td></tr>
+                  <tr><td>Stripeの顧客・契約識別子、料金プラン、契約・支払い失敗・解約状態、返金・監査記録</td><td>IssueDockのCloudflare D1およびStripe</td><td>IssueDockアカウントを通じて利用</td></tr>
+                  <tr><td>不正利用防止用のメールアドレス・接続元IPアドレスのハッシュ値、試行回数、有効期限</td><td>IssueDockのCloudflare D1</td><td>しない</td></tr>
                   <tr><td>IssueDockのオフライン利用権キャッシュ</td><td><code>chrome.storage.local</code></td><td>しない</td></tr>
-                  <tr><td>カード情報</td><td>Stripe</td><td>IssueDockには保存しない</td></tr>
+                  <tr><td>Stripeの画面で入力するカード情報その他の決済・請求情報</td><td>Stripe</td><td>IssueDockには保存しない</td></tr>
                 </tbody>
               </table>
             </div>
@@ -115,8 +121,8 @@
             <ul>
               <li>利用者が登録しChrome権限を許可したBacklog APIへHTTPSで通信します。</li>
               <li>ログイン、トライアル、利用権・契約管理のためIssueDock APIへ通信し、Cloudflare WorkersとD1を利用します。</li>
-              <li>本人確認等の取引メールはResendを通じて送信します。</li>
-              <li>購入・契約管理はStripeの画面で行われます。カード情報はStripeが取り扱い、IssueDockから参照・保存しません。</li>
+              <li>本人確認等の取引メールはResendを通じて送信します。このため、送信先メールアドレス、認証用URL、メール件名および本文をResendへ送信します。</li>
+              <li>購入・契約管理はStripeの画面で行われます。Stripeの画面で入力するカード情報その他の決済・請求情報はStripeが取り扱い、IssueDockから参照・保存しません。</li>
               <li>課題、APIキー、個人整理データをIssueDock運営者のサーバー、Cloudflare、Resend、Stripeへ送信しません。</li>
               <li>広告SDK・行動解析は使用しません。障害検知のため、個人情報、query string、認証情報、本文を含めない運用ログと集計指標を使用します。</li>
               <li>情報を販売または広告利用しません。法令に基づく場合を除き、本項の委託先以外の第三者へ提供しません。</li>
@@ -152,7 +158,7 @@
           <section id="security-policy">
             <h2>8. セキュリティ</h2>
             <p>APIキーはPBKDF2-SHA-256で導出した鍵とAES-256-GCMで暗号化します。APIキーの平文とパスフレーズを同期データ、JSONバックアップ、IssueDockサーバー、運用ログへ含めません。認証tokenは平文で保存せず、digestを保存します。</p>
-            <p>運用ログにはroute template、応答状態、処理時間、エラーコード、request IDを記録し、query string、Authorization、Cookie、token、メールアドレス、端末名、Stripe payload、Backlogデータを記録しません。Cloudflare、ResendまたはStripeの障害時は、確認済みの利用権を定められた期間だけキャッシュで継続する場合があります。</p>
+            <p>運用ログにはroute template、応答状態、処理時間、エラーコード、request IDを記録し、query string、Authorization、Cookie、token、メールアドレス、端末名、Stripe payload、Backlogデータを記録しません。Cloudflare、ResendまたはStripeの障害時は、確認済みの利用権を最大72時間、署名付きのオフライン利用権キャッシュで継続する場合があります。</p>
           </section>
 
           <section id="changes">
@@ -162,7 +168,7 @@
 
           <section id="contact">
             <h2>10. 問い合わせ</h2>
-            <p>問い合わせとベータ版の不具合報告は、<a href="mailto:support@issue-dock.com">support@issue-dock.com</a> で受け付けます。</p>
+            <p>問い合わせと不具合報告は、<a href="mailto:support@issue-dock.com">support@issue-dock.com</a> で受け付けます。</p>
           </section>
         </article>
       </div>

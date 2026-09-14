@@ -1,0 +1,23 @@
+name: Check site
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check pages and links
+        run: node scripts/check-site.mjs
+
+      - name: Check 500px and 1280px layouts
+        run: node scripts/check-responsive.mjs

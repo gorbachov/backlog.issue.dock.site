@@ -25,6 +25,10 @@
           <a href="../#features">機能</a>
           <a href="../#security">データと安全性</a>
           <a aria-current="page" href="./">サポート</a>
+          <a
+            class="nav-cta"
+            href="https://chromewebstore.google.com/detail/issuedock/ciglfijkdakeeaahlbnhpbaalljbnepd"
+          >インストール</a>
         </nav>
       </div>
     </header>
@@ -38,7 +42,7 @@
             <p class="policy-lead">
               使い方、不具合、データの取り扱い、契約に関する案内と、安全な問い合わせ方法をまとめています。
             </p>
-            <p class="policy-date">有料版提供開始日: <span class="pending">未定</span><br />最終更新日: 2026年9月14日</p>
+            <p class="policy-date">最終更新日: 2026年9月14日</p>
           </div>
           <aside class="privacy-summary" aria-label="問い合わせ時の重要事項">
             <p class="summary-label">CONTACT SAFELY</p>
@@ -72,7 +76,7 @@
 
         <article class="policy-card">
           <div class="policy-intro">
-            IssueDockは現在、Chrome Web StoreでTrusted Tester向けに提供しており、一般向けの有料版提供開始日は未定です。現在、有料版の購入申込みは受け付けていません。提供開始日および利用規約の施行日は、販売開始前に本サイトでお知らせします。
+            IssueDockはChrome Web Storeからインストールできます。14日間の無料トライアルはカード登録不要で、終了後の自動課金もありません。継続する場合は、IssueDock内で月額または年額プランを購入してください。
             <nav class="related-links" aria-label="法務・サポートページ">
               <a href="../privacy/">プライバシーポリシー</a>
               <a href="../terms/">利用規約</a>
@@ -82,7 +86,7 @@
 
           <section id="support-scope">
             <h2>1. サポート対象</h2>
-            <p>IssueDockのインストール、初期設定、Backlogスペースとの接続、画面の使い方、同期、データの取り扱い、不具合、セキュリティ上の問題、および提供開始後の契約・解約・返金に関する問い合わせを受け付けます。</p>
+            <p>IssueDockのインストール、初期設定、Backlogスペースとの接続、画面の使い方、同期、データの取り扱い、不具合、セキュリティ上の問題、および契約・解約・返金に関する問い合わせを受け付けます。</p>
             <p><strong>IssueDockは株式会社ヌーラボの公式製品ではありません。</strong> Backlog本体の仕様、契約、障害またはアカウント管理については、株式会社ヌーラボの案内をご確認ください。Backlogは株式会社ヌーラボの商標または登録商標です。</p>
           </section>
 
@@ -119,13 +123,15 @@
             <p>個人ステータス、今日、ピン、タグなどの整理情報はIssueDock内に保存し、Backlog側の課題を変更しません。</p>
             <h3>別のPCでも整理状態を使えますか？</h3>
             <p>同じGoogleアカウントでChrome同期を利用している場合、個人整理データと暗号化した接続情報を同期できます。課題キャッシュと復号済みAPIキーはPC間で同期しません。有料契約は、同じ利用者がIssueDockでメールアドレスを確認することで別のPCでも利用できます。</p>
+            <h3>無料で試せますか？料金はいくらですか？</h3>
+            <p>14日間はカード登録なしですべての機能を試せます。終了後の自動課金はありません。継続する場合は月額250円または年額2,400円（税込）です。</p>
             <h3>株式会社ヌーラボの公式サービスですか？</h3>
             <p>いいえ。IssueDockは株式会社ヌーラボの公式製品ではなく、同社との提携、承認または推奨を示すものではありません。</p>
           </section>
 
           <section id="installation">
             <h2>5. インストール方法</h2>
-            <p>IssueDockのChrome Web Store Item IDは <code>ciglfijkdakeeaahlbnhpbaalljbnepd</code> で、<a href="https://chromewebstore.google.com/detail/ciglfijkdakeeaahlbnhpbaalljbnepd">Chrome Web Store掲載ページ</a>は現在Trusted Tester向けです。一般向け提供開始日は <span class="pending">未定</span> です。Googleがサポートしているデスクトップ版Google Chromeを利用できるWindows、macOS、LinuxおよびChromeOSに対応します。Android・iOSなどのモバイル環境には対応しません。Google Chrome 102以上（最新版推奨）が必要で、Google Chrome以外のChromium系ブラウザは動作保証の対象外です。利用可能になった掲載ページをChromeで開き、「Chromeに追加」を選び、表示される権限を確認してインストールしてください。配布元とItem IDが一致することを確認してください。</p>
+            <p>IssueDockのChrome Web Store Item IDは <code>ciglfijkdakeeaahlbnhpbaalljbnepd</code> です。Chromeで<a href="https://chromewebstore.google.com/detail/issuedock/ciglfijkdakeeaahlbnhpbaalljbnepd">IssueDockのChrome Web Store掲載ページ</a>を開き、「Chromeに追加」を選び、表示される権限を確認してインストールしてください。Googleがサポートしているデスクトップ版Google Chromeを利用できるWindows、macOS、LinuxおよびChromeOSに対応します。Android・iOSなどのモバイル環境には対応しません。Google Chrome 102以上（最新版推奨）が必要で、Google Chrome以外のChromium系ブラウザは動作保証の対象外です。配布元とItem IDが一致することを確認してください。</p>
           </section>
 
           <section id="connection">
@@ -169,10 +175,11 @@
                   <tr><td>APIキー</td><td>暗号化したcredential envelope</td><td>利用者がChrome同期を選択した場合、暗号文のみ</td></tr>
                   <tr><td>復号済みAPIキー</td><td><code>chrome.storage.local</code>または<code>chrome.storage.session</code></td><td>しない</td></tr>
                   <tr><td>同期用パスフレーズ</td><td>保存しない</td><td>しない</td></tr>
-                  <tr><td>メールアドレス、本人確認・端末・認証セッション・利用権情報</td><td>IssueDockのCloudflare D1</td><td>IssueDockアカウントを通じて利用</td></tr>
-                  <tr><td>Stripeの顧客・契約識別子、契約状態</td><td>IssueDockのCloudflare D1およびStripe</td><td>IssueDockアカウントを通じて利用</td></tr>
+                  <tr><td>メールアドレス、本人確認・端末・認証セッション、トライアル・無料利用権情報</td><td>IssueDockのCloudflare D1</td><td>IssueDockアカウントを通じて利用</td></tr>
+                  <tr><td>Stripeの顧客・契約識別子、料金プラン、契約・支払い失敗・解約状態、返金・監査記録</td><td>IssueDockのCloudflare D1およびStripe</td><td>IssueDockアカウントを通じて利用</td></tr>
+                  <tr><td>不正利用防止用のメールアドレス・接続元IPアドレスのハッシュ値、試行回数、有効期限</td><td>IssueDockのCloudflare D1</td><td>しない</td></tr>
                   <tr><td>IssueDockのオフライン利用権キャッシュ</td><td><code>chrome.storage.local</code></td><td>しない</td></tr>
-                  <tr><td>カード・決済情報</td><td>Stripe</td><td>IssueDockには保存しない</td></tr>
+                  <tr><td>Stripeの画面で入力するカード情報その他の決済・請求情報</td><td>Stripe</td><td>IssueDockには保存しない</td></tr>
                 </tbody>
               </table>
             </div>
@@ -199,18 +206,19 @@
           <section id="subscription">
             <h2>12. 契約状況の確認方法</h2>
             <p>IssueDock内の「プランと利用状況」で、無料トライアル、月額・年額の契約状態、支払失敗、解約予定日または契約終了を確認できます。購入後、別PCでのログイン後または支払方法の更新後は、IssueDockへ戻るか「契約状態を再確認」を選んでください。起動中は30分ごとにも再確認します。ログインと利用権管理はIssueDock APIが提供し、購入・契約管理画面とカード決済はStripeが提供・処理します。IssueDockはカード情報を参照・保存しません。</p>
+            <p>継続課金の支払い失敗をIssueDockが確認した場合、失敗時刻から72時間はすべての機能を利用できます。猶予期限までに支払方法を更新し、Stripeで支払いが完了しない場合は、猶予期限後に有料機能へのアクセスを停止します。支払いが完了した後に「契約状態を再確認」を選ぶと、利用を再開できます。</p>
           </section>
 
           <section id="cancellation">
             <h2>13. 解約方法</h2>
             <p>「プランと利用状況」で「契約・支払い方法を管理」を選び、Stripeの契約管理画面で解約手続きを行います。IssueDockへ戻り「契約状態を再確認」を選んでください。解約手続き後も、支払済みの契約期間末日まで有料機能を利用できます。解約により次回以降の自動更新が停止され、契約期間の途中で利用を終了した場合も日割り返金は行いません。IssueDockには契約終了予定日を表示し、その日を過ぎると有料機能へのアクセスを停止します。</p>
-            <p>解約、トライアル終了または支払失敗によって、保存済みのBacklog接続、暗号化したAPIキー、課題キャッシュおよび個人整理データは削除しません。再契約後は保存済みデータを維持したまま利用を再開できます。</p>
+            <p>解約、トライアル終了または支払い失敗の72時間の猶予終了によって、保存済みのBacklog接続、暗号化したAPIキー、課題キャッシュおよび個人整理データは削除しません。再契約後は保存済みデータを維持したまま利用を再開できます。</p>
           </section>
 
           <section id="refunds">
             <h2>14. 返金に関する案内</h2>
             <p>デジタルサービスの性質上、購入者都合によるキャンセル・返金は原則として受け付けず、支払済み期間の未利用分の日割り返金も行いません。二重請求、誤課金、法令上返金が必要な場合は返金対象です。IssueDock側の重大な不具合により主要機能を利用できず、合理的な期間内に解消できない場合は個別に対応します。</p>
-            <p>返金申請は<a href="mailto:support@issue-dock.com">support@issue-dock.com</a>へ、決済日、金額、決済に使用したメールアドレスおよび申請理由を記載して送ってください。カード番号、パスワードまたはBacklog APIキーは送信しないでください。確認後に返金可否を回答し、承認した場合は速やかに処理します。実際の着金日はStripeおよびカード会社の処理期間によります。条件の全文は<a href="../terms/#refunds">利用規約</a>と<a href="../commerce-disclosure/">特定商取引法に基づく表記</a>をご確認ください。</p>
+            <p>返金申請は<a href="mailto:support@issue-dock.com">support@issue-dock.com</a>へ、決済日、金額、決済に使用したメールアドレスおよび申請理由を記載して送ってください。カード番号、パスワードまたはBacklog APIキーは送信しないでください。返金は自動処理ではなく、運営者が申請内容と決済記録を確認し、管理者権限で実行します。確認後に返金可否を回答し、承認した場合は速やかに処理します。実際の着金日はStripeおよびカード会社の処理期間によります。条件の全文は<a href="../terms/#refunds">利用規約</a>と<a href="../commerce-disclosure/">特定商取引法に基づく表記</a>をご確認ください。</p>
           </section>
 
           <section id="security-report">
