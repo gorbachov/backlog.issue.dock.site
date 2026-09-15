@@ -457,8 +457,8 @@ tr:last-child td { border-bottom: 0; }
 .product-feature figure { margin: 0; min-width: 0; }
 .product-feature img { width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; }
 .product-feature figcaption { margin-top: 10px; color: var(--ink-soft); font-size: 11px; }
-#feature-organize figure { max-width: 390px; justify-self: center; }
-#feature-detail figure { max-width: 340px; justify-self: center; }
+#feature-organize figure { max-width: 540px; justify-self: center; }
+#feature-detail figure { max-width: 540px; justify-self: center; }
 @media (max-width: 900px) { .product-feature { gap: 24px; padding: 28px; } }
 @media (max-width: 640px) { .product-feature { grid-template-columns: 1fr; padding: 22px; } .product-feature figure { width: 100%; } }
 

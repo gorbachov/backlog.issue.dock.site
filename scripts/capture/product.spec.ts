@@ -452,13 +452,41 @@ test('captures 0.1.0.0 product screens with offline fictional data', async ({
   await mkdir('test-results/store', { recursive: true });
   await page.getByText('課題内容', {exact:true}).click();
   await page.waitForTimeout(1000);
+  const divider = page.getByRole('separator', {name:'課題一覧と課題詳細の境界を調整'});
+  const boundary = await divider.boundingBox();
+  if (!boundary) throw new Error('Detail divider is not visible');
+  await page.mouse.move(boundary.x + boundary.width / 2, boundary.y + 200);
+  await page.mouse.down();
+  await page.mouse.move(boundary.x - 200, boundary.y + 200, {steps:12});
+  await page.mouse.up();
+  for (const name of ['今日', 'ピン留め', '完了後も残す']) {
+    const button = page.locator('.organizer-toggles').getByRole('button', {name, exact:true});
+    const lines = await button.evaluate(element => {
+      const positions = [];
+      for (const node of element.childNodes) {
+        if (node.nodeType !== Node.TEXT_NODE || !node.textContent?.trim()) continue;
+        const text = node.textContent;
+        const range = document.createRange();
+        range.setStart(node, text.search(/\S/));
+        range.setEnd(node, text.trimEnd().length);
+        positions.push(...Array.from(range.getClientRects(), rect => rect.top));
+      }
+      return new Set(positions).size;
+    });
+    expect(lines, `${name} must remain on one line`).toBe(1);
+  }
   await page.screenshot({ path: 'test-results/store/dashboard.png' });
+  await page.locator('.personal-organizer').screenshot({path:'test-results/store/organize.png'});
+  const detailBox = await page.locator('.detail-column').boundingBox();
+  const commentsBox = await page.locator('.detail-section').filter({hasText:'最新コメント'}).boundingBox();
+  if (!detailBox || !commentsBox) throw new Error('Detail content is missing');
+  await page.screenshot({path:'test-results/store/detail.png', clip:{x:detailBox.x, y:detailBox.y, width:detailBox.width, height:commentsBox.y + commentsBox.height - detailBox.y + 12}});
+
   for (const [name, clip] of Object.entries({
-    organize: { x: 1110, y: 238, width: 320, height: 274 },
-    detail: { x: 1100, y: 65, width: 340, height: 800 },
     spaces: { x: 0, y: 545, width: 240, height: 455 },
     queue: { x: 0, y: 65, width: 240, height: 475 },
   })) await page.screenshot({path: `test-results/store/${name}.png`, clip});
+  await divider.dblclick();
   await page.getByPlaceholder('課題キー・件名・説明を検索').fill('公開前');
   await expect(page.getByText('APP-76', {exact: true})).toHaveCount(0);
   await page.screenshot({ path: 'test-results/store/search.png', clip: { x: 244, y: 145, width: 850, height: 200 } });
