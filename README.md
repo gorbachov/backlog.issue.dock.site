@@ -12,7 +12,7 @@ IssueDockの公式サイトです。ランディングページ、Chrome Web Sto
 
 ## 検証
 
-依存パッケージなしで、内部リンク、ページ構造、公開導線、旧表記を検査できます。
+内部リンク、ページ構造、公開導線、旧表記を検査できます。
 
 ```sh
 node scripts/check-site.js
@@ -25,3 +25,10 @@ node scripts/check-site.js --release
 ```
 
 公開手順と確認項目は [`docs/general-public-release-checklist.md`](docs/general-public-release-checklist.md) を参照してください。
+
+## ローカル品質確認
+
+`npm install`、`npx playwright install chromium`の後、`npm run check`と`npm run audit`を実行します。
+
+- [検証結果と1440px/500px確認画像](docs/review/README.md)
+- [安全な製品画面の撮影記録](docs/product-capture.md)
