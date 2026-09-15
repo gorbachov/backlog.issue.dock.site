@@ -1,0 +1,112 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "keyboard": {
+      "first": "本文へ移動",
+      "afterSkip": "Chrome Web Storeで見る",
+      "faqOpened": true
+    },
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/privacy/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/terms/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/commerce-disclosure/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/support/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "keyboard": {
+      "first": "本文へ移動",
+      "afterSkip": "Chrome Web Storeで見る",
+      "faqOpened": true
+    },
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/privacy/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/terms/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/commerce-disclosure/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/support/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  }
+]
