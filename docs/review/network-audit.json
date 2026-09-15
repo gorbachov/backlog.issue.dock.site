@@ -1,0 +1,39 @@
+[
+  {
+    "url": "https://issue-dock.com/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://issue-dock.com/index.html",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://issue-dock.com/privacy",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://issue-dock.com/privacy/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://issue-dock.com/privacy/index.html",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://issue-dock.com/issuedock-missing-page-20260915/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "http://issue-dock.com/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://gorbachov.github.io/backlog.issue.dock.site/",
+    "status": 200,
+    "final": "https://gorbachov.github.io/backlog.issue.dock.site/"
+  },
+  {
+    "url": "https://www.issue-dock.com/",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

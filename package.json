@@ -1,6 +1,13 @@
 {
   "name": "issuedock-site",
   "private": true,
-  "scripts": { "check": "node scripts/check-site.js", "audit": "node scripts/audit-site.mjs" },
-  "devDependencies": { "@playwright/test": "1.62.0", "@axe-core/playwright": "4.13.0", "lighthouse": "13.4.1" }
+  "scripts": {
+    "check": "node scripts/check-site.js",
+    "audit": "node scripts/audit-site.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.0",
+    "@axe-core/playwright": "4.13.0",
+    "lighthouse": "13.4.1"
+  }
 }

@@ -32,3 +32,4 @@ node scripts/check-site.js --release
 
 - [検証結果と1440px/500px確認画像](docs/review/README.md)
 - [安全な製品画面の撮影記録](docs/product-capture.md)
+- [SEO方針・Search Consoleの手動操作](docs/seo-operations.md)

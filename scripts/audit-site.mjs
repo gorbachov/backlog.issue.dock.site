@@ -37,7 +37,7 @@ try {
    const name=route==='/'?'home':route.split('/')[1];
    if(route==='/') await page.screenshot({path:path.join(out,`${name}-${width}.png`),fullPage:true});
    if(route==='/'){
-    for(const id of ['features','security','beta',...await page.locator('.product-feature').evaluateAll(es=>es.map(e=>e.id))]){await page.locator(`#${id}`).evaluate(e=>scrollTo({top:e.getBoundingClientRect().top+scrollY-90,behavior:'instant'}));await page.waitForTimeout(250);await page.locator(`#${id}`).screenshot({path:path.join(out,`${id}-${width}.png`)});}
+    for(const id of ['features','security','install',...await page.locator('.product-feature').evaluateAll(es=>es.map(e=>e.id))]){await page.locator(`#${id}`).evaluate(e=>scrollTo({top:e.getBoundingClientRect().top+scrollY-90,behavior:'instant'}));await page.waitForTimeout(250);await page.locator(`#${id}`).screenshot({path:path.join(out,`${id}-${width}.png`)});}
     await page.goto(base+'/');await page.keyboard.press('Tab');const first=await page.locator(':focus').textContent();
     await page.keyboard.press('Enter');await page.keyboard.press('Tab');
     metrics.keyboard={first,afterSkip:await page.locator(':focus').textContent()};

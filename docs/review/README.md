@@ -1,6 +1,6 @@
 # Issue #6 検証結果と確認画像
 
-2026-09-15、Ubuntuホストのローカルプレビューで検証。mainへのマージ・本番デプロイは未実施。
+2026-09-15、Ubuntuホストの成果と一般公開用の法務・公開導線を統合したローカルプレビューで最終検証。
 
 | 幅 | Performance | Accessibility | Best Practices | SEO |
 |---|---:|---:|---:|---:|
@@ -21,7 +21,7 @@ Lighthouse 13.4.1。ローカル配信・追加スロットリングなしのラ
 | トップ全体 | [1440px](home-1440.png) | [500px](home-500.png) |
 | 機能紹介 | [1440px](features-1440.png) | [500px](features-500.png) |
 | データと安全性 | [1440px](security-1440.png) | [500px](security-500.png) |
-| 下部CTA | [1440px](beta-1440.png) | [500px](beta-500.png) |
+| 下部CTA | [1440px](install-1440.png) | [500px](install-500.png) |
 | 個人整理 | [1440px](feature-organize-1440.png) | [500px](feature-organize-500.png) |
 | 検索 | [1440px](feature-search-1440.png) | [500px](feature-search-500.png) |
 | 詳細とコメント | [1440px](feature-detail-1440.png) | [500px](feature-detail-500.png) |
@@ -36,4 +36,4 @@ Lighthouse 13.4.1。ローカル配信・追加スロットリングなしのラ
 
 詳細: [ブラウザ監査JSON](browser-audit.json)、[Lighthouse 1440px](lighthouse-1440.json)、[Lighthouse 500px](lighthouse-500.json)。
 
-**ユーザーのデザイン・内容確認待ち。承認までマージ・main更新・本番デプロイ禁止。**
+2026-09-15、ユーザーによるデザイン・内容確認が完了し、一般公開用サイトとして承認済み。
