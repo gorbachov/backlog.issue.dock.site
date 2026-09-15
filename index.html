@@ -8,22 +8,19 @@
       name="description"
       content="IssueDockは、複数のBacklogスペースに散らばる課題を横断検索し、自分のやり方で整理できるローカルファーストのChrome拡張です。"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IssueDock" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="IssueDock | 複数のBacklogスペースを、ひとつの画面に" />
+    <meta property="og:description" content="IssueDockは、複数のBacklogスペースに散らばる課題を横断検索し、自分のやり方で整理できるローカルファーストのChrome拡張です。" />
+    <meta property="og:url" content="https://issue-dock.com/" />
+    <meta property="og:image" content="https://issue-dock.com/assets/issuedock-dashboard-1280x800.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="IssueDockの課題一覧と詳細画面" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#20251f" />
     <link rel="canonical" href="https://issue-dock.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="IssueDock | 複数のBacklogスペースを、ひとつの画面に" />
-    <meta
-      property="og:description"
-      content="複数スペースの課題を横断検索し、今日・次・待ち・タグで自分らしく整理。"
-    />
-    <meta
-      property="og:url"
-      content="https://issue-dock.com/"
-    />
-    <meta
-      property="og:image"
-      content="https://issue-dock.com/assets/issuedock-dashboard-1280x800.png"
-    />
     <link rel="icon" href="./assets/issuedock-icon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
@@ -40,7 +37,7 @@
           <a href="#features">機能</a>
           <a href="#security">データと安全性</a>
           <a href="./privacy/">プライバシー</a>
-          <a class="nav-cta" href="#beta">無料ベータ</a>
+          <a class="nav-cta" href="https://chromewebstore.google.com/detail/issuedock/ciglfijkdakeeaahlbnhpbaalljbnepd">Chrome Web Store</a>
         </nav>
       </div>
     </header>
@@ -56,7 +53,7 @@
               会社やプロジェクトの枠を越えて自分の仕事を整理できます。
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#beta">無料ベータについて</a>
+              <a class="button button-primary" href="https://chromewebstore.google.com/detail/issuedock/ciglfijkdakeeaahlbnhpbaalljbnepd">Chromeに追加</a>
               <a class="button button-secondary" href="#features">できることを見る</a>
             </div>
             <ul class="hero-points" aria-label="IssueDockの特徴">
@@ -95,13 +92,17 @@
               <span></span><span></span><span></span>
               <div>IssueDock</div>
             </div>
+            <picture>
+              <source media="(max-width: 640px)" srcset="./assets/screenshots/overview-mobile.webp" width="610" height="410" />
             <img
-              src="./assets/issuedock-dashboard-1280x800.png"
-              width="1280"
-              height="800"
+              src="./assets/screenshots/dashboard.webp"
+              width="1440"
+              height="1000"
+              fetchpriority="high"
               alt="IssueDockで複数スペースの課題一覧と詳細を3カラムで表示している画面"
             />
-            <figcaption>画面内のスペース・課題・ユーザーはすべて架空のデモデータです。</figcaption>
+            </picture>
+            <figcaption>IssueDock 0.1.0.0。画面内のスペース・課題・ユーザー・利用状況はすべて架空のデモデータです。小画面では一部を拡大表示しています。</figcaption>
           </figure>
         </div>
       </section>
@@ -123,63 +124,90 @@
         <div class="shell">
           <div class="section-heading centered">
             <p class="eyebrow">FEATURES</p>
-            <h2 id="features-title">課題を見つけて、決めて、動かす。</h2>
+            <h2 id="features-title">課題を見つけて、次の行動へ。</h2>
             <p>複数スペースをまたぐ日々の作業を、1画面の流れにまとめます。</p>
           </div>
 
-          <div class="feature-grid">
-            <article class="feature-card feature-card-wide">
-              <span class="feature-number">01</span>
-              <div>
-                <h3>複数スペースを横断表示</h3>
-                <p>担当課題・ウォッチ・通知・自分が作成した課題を、スペースを越えて一覧化します。</p>
+<div class="product-features">
+<article class="product-feature" id="feature-organize">
+              <div class="feature-copy">
+              <p class="eyebrow">01 / FEATURES</p>
+              <h3>今日の仕事を、自分の順番に。</h3>
+              <p>「今日」と「次・待ち・あとで」を組み合わせて優先度を整理。個人タグとピンで、別スペースの関連課題も見失いません。</p>
               </div>
-              <div class="space-stack" aria-hidden="true">
-                <span>Space A</span><span>Space B</span><span>Space C</span>
+              <figure>
+              <img src="./assets/screenshots/organize.webp" width="522" height="252" loading="lazy" decoding="async" alt="個人整理パネルで次、今日、ピン留め、確認待ちと今週リリースのタグを設定した画面" />
+              <figcaption>架空のデモデータによる実画面（一部を拡大）</figcaption>
+              </figure>
+              </article>
+<article class="product-feature" id="feature-search">
+              <div class="feature-copy">
+              <p class="eyebrow">02 / FEATURES</p>
+              <h3>探す場所を、ひとつに。</h3>
+              <p>課題キー・件名・説明を横断検索。ステータス・担当者・期限の絞り込みで、今確認したい課題へすぐにたどり着けます。</p>
               </div>
-            </article>
-
-            <article class="feature-card">
-              <span class="feature-number">02</span>
-              <h3>自分だけの整理</h3>
-              <p>「未整理・次・待ち・あとで」と独立した「今日」、ピン、ドラッグ順で優先度を決められます。</p>
-              <div class="status-pills" aria-hidden="true">
-                <span>今日</span><span>次</span><span>待ち</span><span>あとで</span>
+              <figure>
+              <picture>
+              <source media="(max-width: 640px)" srcset="./assets/screenshots/search-mobile.webp" width="430" height="176" />
+              <img src="./assets/screenshots/search.webp" width="850" height="200" loading="lazy" decoding="async" alt="公開前という検索語とステータス・担当者・期限の絞り込みを表示した課題一覧" />
+              </picture>
+              <figcaption>架空のデモデータによる実画面（一部を拡大）</figcaption>
+              </figure>
+              </article>
+<article class="product-feature" id="feature-detail">
+              <div class="feature-copy">
+              <p class="eyebrow">03 / FEATURES</p>
+              <h3>背景とコメントを、その場で確認。</h3>
+              <p>一覧から課題を選ぶと、詳細と最新コメントを同じ画面で確認できます。個人整理を続けながら、次の行動を判断できます。</p>
               </div>
-            </article>
-
-            <article class="feature-card dark-card">
-              <span class="feature-number">03</span>
-              <h3>横断検索と絞り込み</h3>
-              <p>課題キー・件名・説明を検索し、プロジェクト・ステータス・担当者・期限で絞り込めます。</p>
-              <div class="search-demo" aria-hidden="true"><span>⌕</span> 課題を検索...</div>
-            </article>
-
-            <article class="feature-card">
-              <span class="feature-number">04</span>
-              <h3>スペース共通タグ</h3>
-              <p>Backlog側に影響しない個人タグで、別プロジェクトの関連課題をひとまとめにできます。</p>
-              <div class="tag-demo" aria-hidden="true"># リリース準備</div>
-            </article>
-
-            <article class="feature-card">
-              <span class="feature-number">05</span>
-              <h3>キャッシュを先に表示</h3>
-              <p>保存済みの課題を先に表示し、同期結果を順次反映。待ち時間を減らします。</p>
-              <div class="sync-demo" aria-hidden="true"><span></span><strong>同期中 82%</strong></div>
-            </article>
-
-            <article class="feature-card feature-card-wide">
-              <span class="feature-number">06</span>
-              <div>
-                <h3>同じGoogleアカウントのChrome間で同期</h3>
-                <p>個人整理データと暗号化した接続情報を同期。新しいPCではパスフレーズで解除できます。</p>
+              <figure>
+              <img src="./assets/screenshots/detail.webp" width="546" height="750" loading="lazy" decoding="async" alt="課題詳細に個人整理、課題内容、デモ担当者とデモ確認者のコメントを表示した画面" />
+              <figcaption>架空のデモデータによる実画面（一部を拡大）</figcaption>
+              </figure>
+              </article>
+<article class="product-feature" id="feature-theme">
+              <div class="feature-copy">
+              <p class="eyebrow">04 / FEATURES</p>
+              <h3>スペースを、色で見分ける。</h3>
+              <p>ナビゲーション・課題一覧・詳細にスペースごとのテーマを反映。切り替えても、どの仕事を見ているか分かります。</p>
               </div>
-              <div class="device-demo" aria-hidden="true">
-                <span>PC A</span><i>↔</i><span>PC B</span>
+              <figure>
+              <picture>
+              <source media="(max-width: 640px)" srcset="./assets/screenshots/theme-mobile.webp" width="606" height="190" />
+              <img src="./assets/screenshots/theme.webp" width="872" height="206" loading="lazy" decoding="async" alt="スペース設定でスカイやコーラルなど10種類のカラーテーマを選ぶ画面" />
+              </picture>
+              <figcaption>架空のデモデータによる実画面（一部を拡大）</figcaption>
+              </figure>
+              </article>
+<article class="product-feature" id="feature-sync">
+              <div class="feature-copy">
+              <p class="eyebrow">05 / FEATURES</p>
+              <h3>PCが変わっても、自分の整理を。</h3>
+              <p>同じGoogleアカウントのChrome同期で、個人整理と暗号化した接続情報を共有。課題キャッシュは各端末に保存し、新しいPCではパスフレーズで接続情報を解除します。</p>
               </div>
-            </article>
-          </div>
+              <figure>
+              <picture>
+              <source media="(max-width: 640px)" srcset="./assets/screenshots/sync-mobile.webp" width="690" height="271" />
+              <img src="./assets/screenshots/sync.webp" width="918" height="248" loading="lazy" decoding="async" alt="同期とセキュリティ設定にChrome同期領域の使用量と暗号形式を表示した画面" />
+              </picture>
+              <figcaption>架空のデモデータによる実画面（一部を拡大）</figcaption>
+              </figure>
+              </article>
+<article class="product-feature" id="feature-plan">
+              <div class="feature-copy">
+              <p class="eyebrow">06 / FEATURES</p>
+              <h3>利用状況を、いつでも確認。</h3>
+              <p>「プランと利用状況」で現在の状態を確認できます。画面は架空の契約状態の例です。実際の提供条件は利用規約・特定商取引法に基づく表記をご確認ください。</p>
+              <p>
+              <a href="./terms/">利用規約</a> · <a href="./commerce-disclosure/">特定商取引法に基づく表記</a>
+              </p>
+              </div>
+              <figure>
+              <img src="./assets/screenshots/plan.webp" width="460" height="240" loading="lazy" decoding="async" alt="プランと利用状況にご契約は有効ですと表示した架空の契約状態の画面" />
+              <figcaption>架空のデモデータによる実画面（状態の例）</figcaption>
+              </figure>
+              </article>
+</div>
         </div>
       </section>
 
@@ -253,14 +281,14 @@
         </div>
       </section>
 
-      <section id="beta" class="beta-section" aria-labelledby="beta-title">
-        <div class="shell beta-card">
+      <section id="install" class="install-section" aria-labelledby="install-title">
+        <div class="shell install-card">
           <div>
-            <p class="eyebrow">FREE BETA</p>
-            <h2 id="beta-title">無料ベータ公開に向けて準備中です。</h2>
-            <p>Chrome Web Storeでの公開準備が整い次第、このページでお知らせします。</p>
+            <p class="eyebrow">GET ISSUEDOCK</p>
+            <h2 id="install-title">Chrome Web Storeから始められます。</h2>
+            <p>14日間の無料トライアルはカード登録不要で、終了後に自動課金されません。</p>
           </div>
-          <span class="button button-disabled" aria-label="無料ベータは公開準備中です">公開準備中</span>
+          <a class="button button-primary" href="https://chromewebstore.google.com/detail/issuedock/ciglfijkdakeeaahlbnhpbaalljbnepd">Chromeに追加</a>
         </div>
       </section>
     </main>

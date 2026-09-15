@@ -1,0 +1,132 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "keyboard": {
+      "first": "本文へ移動",
+      "afterSkip": "Chromeに追加",
+      "faqOpened": true
+    },
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/privacy/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/terms/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/commerce-disclosure/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/support/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/not-a-real-page/",
+    "width": 1440,
+    "status": 404,
+    "scrollWidth": 1440,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "keyboard": {
+      "first": "本文へ移動",
+      "afterSkip": "Chromeに追加",
+      "faqOpened": true
+    },
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/privacy/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/terms/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/commerce-disclosure/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/support/",
+    "width": 500,
+    "status": 200,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  },
+  {
+    "route": "/not-a-real-page/",
+    "width": 500,
+    "status": 404,
+    "scrollWidth": 500,
+    "cls": 0,
+    "brokenImages": [],
+    "errors": [],
+    "violations": []
+  }
+]
