@@ -7,6 +7,7 @@ IssueDockの公式サイトです。ランディングページ、Chrome Web Sto
 - Terms: https://issue-dock.com/terms/
 - Commerce disclosure: https://issue-dock.com/commerce-disclosure/
 - Support: https://issue-dock.com/support/
+- Articles: https://issue-dock.com/articles/
 
 `main`ブランチへの更新はGitHub Actionsを通してGitHub Pagesへ自動反映され、Cloudflare Worker `issue-dock-site` から独自ドメインで配信されます。
 
