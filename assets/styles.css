@@ -653,5 +653,16 @@ tr:last-child td { border-bottom: 0; }
 
 /* Additional editorial guides share the original article layout. */
 .article-list-grid { display: grid; gap: 28px; }
-.article-card-text { grid-template-columns: 1fr; }
-.article-card-text .article-card-body { border-left: 5px solid var(--accent); }
+.article-thumbnail { padding: 30px 24px 88px; }
+.thumbnail-caption { position: relative; z-index: 1; color: #c6dd9d; font-size: 10px; font-weight: 900; letter-spacing: .14em; }
+.thumbnail-rows, .thumbnail-tags { position: relative; z-index: 1; display: grid; gap: 10px; margin-top: 24px; }
+.thumbnail-rows > span { display: flex; align-items: center; gap: 10px; border: 1px solid #626e59; border-radius: 10px; background: #323d2d; padding: 12px; color: #eef3e9; font-size: 12px; }
+.thumbnail-rows b { color: var(--accent); font-size: 11px; }
+.thumbnail-rows i { margin-left: auto; color: #d3dfc7; font-size: 10px; font-style: normal; }
+.thumbnail-tags span { width: max-content; max-width: 100%; border: 1px solid #626e59; border-radius: 999px; background: #323d2d; padding: 10px 16px; color: #eef3e9; font-size: 13px; }
+.thumbnail-tags span:nth-child(2) { margin-left: 24px; }
+.thumbnail-tags span:nth-child(3) { margin-left: 48px; }
+.thumbnail-lock { position: relative; z-index: 1; display: grid; justify-items: center; gap: 15px; margin: 30px auto 0; border: 1px solid #626e59; border-radius: 16px; padding: 22px 12px; background: #323d2d; }
+.thumbnail-key { color: #d3dfc7; font-size: 10px; letter-spacing: .15em; }
+.thumbnail-cipher { color: var(--accent); font-size: 23px; letter-spacing: .12em; }
+.thumbnail-lock-label { color: #eef3e9; font-size: 12px; }
