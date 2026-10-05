@@ -650,3 +650,8 @@ tr:last-child td { border-bottom: 0; }
 @media (max-width: 640px) { .hero h1 { font-size: clamp(38px, 10vw, 56px); } }
 
 .table-wrap:focus-visible { outline: 3px solid #4e6b04; outline-offset: 4px; }
+
+/* Additional editorial guides share the original article layout. */
+.article-list-grid { display: grid; gap: 28px; }
+.article-card-text { grid-template-columns: 1fr; }
+.article-card-text .article-card-body { border-left: 5px solid var(--accent); }
