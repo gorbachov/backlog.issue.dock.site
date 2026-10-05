@@ -6,7 +6,7 @@ const root = path.resolve(__dirname, '..');
 const seo = process.argv.includes('--seo');
 const release = process.argv.includes('--release');
 const pages = ['index.html', 'privacy/index.html', 'terms/index.html', 'commerce-disclosure/index.html', 'support/index.html'];
-pages.push('articles/index.html', 'articles/backlog-multiple-spaces/index.html');
+pages.push('articles/index.html', 'articles/backlog-multiple-spaces/index.html', 'articles/backlog-client-management/index.html', 'articles/backlog-today-tasks/index.html', 'articles/backlog-api-key-storage/index.html', 'articles/backlog-personal-tags/index.html');
 if (fs.existsSync(path.join(root, '404.html'))) pages.push('404.html');
 const titles = new Set(), descriptions = new Set(), indexed = [];
 const attr = (tag, key) => tag.match(new RegExp(`\\b${key}="([^"]*)"`))?.[1];
